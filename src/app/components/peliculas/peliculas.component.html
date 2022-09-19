@@ -1,10 +1,19 @@
 <div class="container">
+  <div class="row pt-3">
+    <h3>Buscar por:</h3>
+    <div class="col text-end">
+      <p>Titulo :</p>
+    </div>
+    <div class="col pb-5">
+      <input type="text" name="titulo" id="titulo"> <a class="btn btn-outline-dark">Buscar</a>
+    </div>
+  </div>
   <div class="row">
     <div class="col" *ngFor="let mov of Movies.results">
       <div class="card" style="width: 18rem;" >
         <img src="https://image.tmdb.org/t/p/w220_and_h330_face{{mov.poster_path}}" class="card-img-top cardImg" alt="imagen">
         <div class="card-body">
-          <h5 class="card-title">{{mov.title}}</h5>
+          <h4 class="card-title">{{mov.title}}</h4>
           <a [routerLink]="['/movies',mov.id]" class="btn btn-warning w-100">See more</a>
         </div>
       </div>

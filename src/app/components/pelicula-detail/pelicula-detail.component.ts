@@ -11,8 +11,6 @@ import { MovieService } from 'src/app/services/movie.service';
 export class PeliculaDetailComponent implements OnInit {
 
 
-  baseUrlp1 = 'https://api.themoviedb.org/3/movie/';
-  baseUrlp2 = '?api_key=fb4e2111a7042ca52ce47c96e093533b';
 
   currentMov: Movies = {
     id:'',
@@ -34,7 +32,6 @@ export class PeliculaDetailComponent implements OnInit {
     .subscribe(
       data => {
         this.currentMov = data;
-        console.log(this.currentMov);
       },
       error => {
         console.log(error);
