@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="col" *ngFor="let mov of Movies">
+      <div class="card" style="width: 18rem;" >
+        <!-- <img src={{mov.poster_path}} class="card-img-top" alt="imagen"> -->
+        <div class="card-body">
+          <h5 class="card-title">{{mov.title}}</h5>
+          <a [routerLink]="['/movies',mov.id]" class="btn btn-warning w-100">See more</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
