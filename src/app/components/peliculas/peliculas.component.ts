@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MovieService } from 'src/app/services/movie.service';
 import { Movies } from 'src/app/models/Movies.model';
@@ -9,24 +8,21 @@ import { Movies } from 'src/app/models/Movies.model';
   styleUrls: ['./peliculas.component.css']
 })
 export class PeliculasComponent implements OnInit {
-  Movies?: Movies[];
+  Movies?: any;
   currentMovie: Movies = {};
   currentIndex = -1;
-  title = '';
-
-  constructor(private MovieService: MovieService) {}
+  name = '';
+  constructor( private movieServ: MovieService) { }
 
   ngOnInit(): void {
     this.retrieveMovies();
   }
-
-  retrieveMovies(): void {
-    this.MovieService.getAll().subscribe(
-      (data) => {
-        this.Movies = data;
-        console.log(data);
+  retrieveMovies():void {
+    this.movieServ.getAll().subscribe(
+      result => {
+        this.Movies = result;
       },
-      (error) => {
+      error => {
         console.log(error);
       }
     );
@@ -43,11 +39,12 @@ export class PeliculasComponent implements OnInit {
   }
 
 
+
   searchName():void {
     this.currentMovie ={}
     this.currentIndex =-1
 
-    this.MovieService.findByTitle(this.title)
+    this.movieServ.findByTitle(this.name)
     .subscribe(
       data => {
         console.log(data);

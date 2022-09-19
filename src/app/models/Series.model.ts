@@ -1,4 +1,5 @@
 export class Series {
+  id?:any;
   poster_path?: any;
   name?: any;
   original_name?: string;

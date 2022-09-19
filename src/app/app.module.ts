@@ -9,6 +9,8 @@ import { PeliculasComponent } from './components/peliculas/peliculas.component';
 import { SeriesComponent } from './components/series/series.component';
 import { PeliculaDetailComponent } from './components/pelicula-detail/pelicula-detail.component';
 import { SerieDetailComponent } from './components/serie-detail/serie-detail.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { SerieDetailComponent } from './components/serie-detail/serie-detail.com
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
